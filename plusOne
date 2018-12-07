@@ -1,24 +1,18 @@
 class Solution {
     public int[] plusOne(int[] digits) {
-        int carry = 0;
-        for (int i = 1; i < digits.length; i++) {
-            digits[digits.length-i] += 1;
-            digits[digits.length-i] += carry;
-            carry = 0;
-            if (digits[digits.length - i] > 9) {
-                digits[digits.length - i] %= 10;
-                carry = 1;
+        bool carry = true;
+        for (int i = digits.length-1; carry; i--) {
+            digits[i] += 1;
+            if (digits[i] > 9) {
+                digits[i] = 0;
+                if (i=0) {
+                    int[] newMath = new int[digits.length + 1];
+                    newMath[0] = 1;
+                    return newMath;
+                }
             }
-            else if (i == digits.length && digits[0] == 9){
-                int[] newMath = new int[digits.length + 1];
-                newMath[0] = 1;
-                return newMath;
-            }
-            else {
-               return digits; 
-            }
-            
+            else 
+                return digits;
         }
-        return digits;
     }
 }
