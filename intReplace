@@ -8,7 +8,7 @@ class Solution {
                 n /= 2;
             }
             else{
-                if ((n+1)%4==0)
+                if (n>4 && (n+1)%4==0)  // Add condition to force n == 3 into the -- branch
                     n++;
                 else
                     n--;
