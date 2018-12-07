@@ -8,29 +8,10 @@ class Solution {
                 n /= 2;
             }
             else{
-                nUp = n + 1;
-                nDown = n - 1;
-                while ((nUp % 2 == 0) && (nDown % 2 == 0)) {
-                    nUp /= 2;
-                    nDown /= 2;
-                    if (nUp == 1) {
-                        n++;
-                        break;
-                    }
-                    else if (nDown == 1) {
-                        n--;
-                        break;
-                    }
-                    else {
-                        continue;
-                    }
-                }
-                if (nUp%2 == 0) {
+                if ((n+1)%4==0)
                     n++;
-                }
-                else {
+                else
                     n--;
-                }
             }
             turnCount++;
         }
