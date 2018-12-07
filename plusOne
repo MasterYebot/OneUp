@@ -5,7 +5,7 @@ class Solution {
             digits[i] += 1;
             if (digits[i] > 9) {
                 digits[i] = 0;
-                if (i=0) {
+                if (i==0) {
                     int[] newMath = new int[digits.length + 1];
                     newMath[0] = 1;
                     return newMath;
